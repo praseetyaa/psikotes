@@ -50,7 +50,7 @@
         <img width="40" src="{{ asset('assets/images/icon/next.png') }}">
       </button>
     </div>  
-    <div class="w-100 my-3 rounded-1" style="height:3px; background-color:#dee2e6"></div>
+    <div class="w-100 my-3 rounded-1" style="height:3px; background-color:transparent"></div>
     <div class="heading">
         <p class="m-0 fw-bold">Daftar Tes</p>
     </div>
@@ -83,12 +83,14 @@
         <div class="row justify-content-center">
             @if(count($tests)>0)
                 @foreach($tests as $key=>$test)
-                <div class="col-auto">
-                    <a href="/tes/{{ $test->code }}" class="btn btn-md btn-block btn-outline-dark d-flex border-0 fw-bold py-3 my-3">
-                        <img width="100" class="me-3" src="{{asset('assets/images/icon/'.$images[$key])}}">
-                        <p class="m-0 mb-2">{{ $test->name }}</p>
-                    </a>
-                </div>
+                    <div class="col-md-6 d-flex align-items-stretch col-lg-3">
+                        <a href="/tes/{{ $test->code }}" class="btn btn-md btn-block btn-outline-dark rounded-2 d-flex border py-3 my-2 w-100">
+                            <img width="60" class="me-3" src="{{asset('assets/images/icon/'.$images[$key])}}">
+                            <div class="text-start">
+                                <p class="m-0 fw-bold">{{ $test->name }}</p>
+                            </div>
+                        </a>
+                    </div>
                 @endforeach
             @else
                 <div class="col-12 mb-0">
@@ -123,10 +125,9 @@
                         @foreach($tests as $key=>$test)
                         <div class="col-md-6 d-flex align-items-stretch col-lg-3">
                             <a href="/tes/{{ $test->code }}" class="btn btn-md btn-block btn-outline-dark rounded-2 d-flex border py-3 my-2 w-100">
-                                <img width="80" class="me-3" src="{{asset('assets/images/icon/'.$images[$key])}}">
+                                <img width="60" class="me-3" src="{{asset('assets/images/icon/'.$images[$key])}}">
                                 <div class="text-start">
                                     <p class="m-0 fw-bold">{{ $test->name }}</p>
-                                    <p>Tes kepribadian</p>
                                 </div>
                             </a>
                         </div>
@@ -172,12 +173,14 @@
             <div class="row justify-content-center">
                 @if(count($tests)>0)
                     @foreach($tests as $key=>$test)
-                    <div class="col-auto">
-                        <a href="/tes/{{ $test->code }}" class="btn btn-md btn-block btn-outline-dark border-0 fw-bold py-3 my-3">
-                            <p class="m-0 mb-2">{{ $test->name }}</p>
-                            <img width="100" src="{{asset('assets/images/icon/'.$images[$key])}}">
-                        </a>
-                    </div>
+                        <div class="col-md-6 d-flex align-items-stretch col-lg-3">
+                            <a href="/tes/{{ $test->code }}" class="btn btn-md btn-block btn-outline-dark rounded-2 d-flex border py-3 my-2 w-100">
+                                <img width="60" class="me-3" src="{{asset('assets/images/icon/'.$images[$key])}}">
+                                <div class="text-start">
+                                    <p class="m-0 fw-bold">{{ $test->name }}</p>
+                                </div>
+                            </a>
+                        </div>
                     @endforeach
                 @else
                     <div class="col-12 mb-0">
